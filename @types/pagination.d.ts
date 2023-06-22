@@ -1,0 +1,3 @@
+type IPaginationProps = {
+  list: Array;
+};

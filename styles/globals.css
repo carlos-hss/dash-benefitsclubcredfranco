@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+
+html,
+body {
+  height: 100%;
+  background-color: #181A1E;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+@layer utilities{
+  .grid-auto-wrap {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns:
+      repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    justify-items: center;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .grid-auto-wrap {
+      justify-items: start;
+    }
+  }
+}

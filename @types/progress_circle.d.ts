@@ -1,0 +1,3 @@
+type ProgressCircleProps = {
+  percentage: number;
+};
