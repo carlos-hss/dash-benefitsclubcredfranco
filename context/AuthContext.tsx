@@ -105,9 +105,10 @@ function AuthContextProvider({ children }: IProps) {
       registerUser,
       user,
       setUser,
-      signIn
+      signIn,
+      recoverUserInformation
     }),
-    [isAuthenticated, signIn, registerUser, user, setUser],
+    [isAuthenticated, signIn, registerUser, user, setUser, recoverUserInformation],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -17,5 +17,6 @@ type IAuthContext = {
   user: IUser | null;
   registerUser: (data: IRegisterUserProps) => Promise<void>;
   signIn: (data: ISignInProps, type_permitted: string) => Promise<void>;
-  setUser: React.Dispatch<React.SetStateAction<IUser | null>>
+  setUser: React.Dispatch<React.SetStateAction<IUser | null>>;
+  recoverUserInformation: () => void;
 };

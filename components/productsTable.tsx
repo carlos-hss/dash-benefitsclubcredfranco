@@ -65,7 +65,7 @@ const ProductsTable: FC<Props> = ({ products }) => {
             </tr>
           )}
       ),
-    [products],
+    [products, user],
   );
 
   return (

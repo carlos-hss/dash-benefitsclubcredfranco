@@ -14,16 +14,20 @@ interface Props {
 
 const ModalGenerateVoucher: FC<Props> = ({ setIsModalGenerateVoucherOpened, product, setProduct }) => {
   const { handleSubmit } = useForm();
-  const { user } = useAuthContext()
+  const { user, recoverUserInformation } = useAuthContext()
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const generateVoucher = async () => {
     if (user) {
       setIsLoading(true)
+
       await api.post('/vouchers/generate', {
         product_id: product.id,
         user_id: user.id
       });
+
+      recoverUserInformation();
+
       handleCloseModal()
       setIsLoading(false)
     }
