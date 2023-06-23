@@ -5,7 +5,7 @@ export default function Burger({ onClick, isOpen }: BurgerProps) {
     <div
       onClick={onClick}
       className={`block lg:hidden fixed top-2 ${
-        isOpen ? 'left-[14rem]' : 'left-4'
+        isOpen ? 'left-[12.5rem]' : 'left-4'
       } space-y-2 cursor-pointer transition-all duration-200 ease-in-out z-30`}
     >
       <button type="button" title="button" className="relative group">

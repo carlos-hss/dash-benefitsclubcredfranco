@@ -59,7 +59,7 @@ export default function Page() {
             <p className="mb-4 text-sm font-medium text-gray3 lg:text-base">
               Novo aqui?{' '}
               <Link
-                href="/register"
+                href="/admin/register"
                 className="border-b-2 border-solid border-primaryColor text-primaryColor"
               >
                 Crie uma conta

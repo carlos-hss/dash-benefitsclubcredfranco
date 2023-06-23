@@ -47,10 +47,10 @@ export default function Page() {
         <div className="flex w-11/12 max-w-xl flex-col items-center justify-center gap-6 lg:w-3/5">
           <div className="mb-8 flex w-full flex-col items-center justify-center text-center lg:items-start lg:justify-start lg:text-left">
             <h1 className="mb-4 text-2xl font-medium text-gray3 lg:text-4xl">
-              Create your free account now!
+              Crie sua conta!
             </h1>
             <p className="mb-4 text-sm font-medium text-gray3 lg:text-base">
-              Already have an account?{' '}
+              Já possui uma conta?{' '}
               <Link
                 href="/login"
                 className="border-b-2 border-solid border-primaryColor text-primaryColor"
@@ -74,7 +74,7 @@ export default function Page() {
             <div className="mt-4 flex w-full flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-0.5">
                 <p className="text-sm font-semibold text-gray3">
-                  Show password
+                  Mostrar senha
                 </p>
                 <SwitchBlue
                   value={showPassword}
@@ -82,7 +82,7 @@ export default function Page() {
                 />
               </div>
               <Button type="submit" isLoading={isLoading}>
-                Register
+                Registrar
               </Button>
             </div>
             <FormControlLabel
@@ -107,21 +107,18 @@ export default function Page() {
               }}
               label={
                 <label>
-                  I agree to the{' '}
+                  Eu concordo com os{' '}
                   <Link href="/login" className="text-primaryColor">
-                    Terms & Conditions
+                    Termos e Condições
                   </Link>
                 </label>
               }
             />
           </form>
           <p className="mb-4 text-center text-base font-medium text-gray3">
-            © {year} All Rights Reserved.{' '}
+            © {year} Todos os direitos reservados.{' '}
             <span className="cursor-pointer text-primaryColor">CredMarket</span>{' '}
-            created by carlos-hss.{' '}
-            <span className="cursor-pointer text-primaryColor">
-              Terms & Conditions, Privacy Settings.
-            </span>
+            criado por <span className="cursor-pointer text-primaryColor">carlos-hss</span>.{' '}
           </p>
         </div>
       </div>

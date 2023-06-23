@@ -21,44 +21,50 @@ const ProductsTable: FC<Props> = ({ products }) => {
 
   const Products = useMemo(
     () =>
-      products?.map((data, index) => (
-        <tr
-          key={data.id}
-          className={`table-row h-10 text-gray1 text-xs lg:text-sm ${
-            index < products.length - 1 &&
-            'border-b border-backgroundColor'
-          }`}
-        >
-          <td
-            key={`${data.id}-${data.name}`}
-            className="table-cell text-center"
-          >
-            {data.name}
-          </td>
-          <td
-            key={`${data.id}-${data.points_cost}`}
-            className="table-cell text-center"
-          >
-            {data.points_cost}
-          </td>
-          {user?.type_user === 'C' && (<td key={`${data.id}-link`} className="hidden lg:table-cell">
-            <p
-              onClick={() => handleOpenGenerateVoucher(data)}
-              className=" text-primaryColor cursor-pointer hover:text-primaryHover transition-colors ease-in-out duration-150"
+      products?.map((data, index) => {
+        const hasNecessaryPoints = user && user.points >= data.points_cost;
+
+        return (
+            <tr
+              key={data.id}
+              className={`table-row h-10 text-gray1 text-xs lg:text-sm ${
+                index < products.length - 1 &&
+                'border-b border-backgroundColor'
+              }`}
             >
-              Voucher
-            </p>
-          </td>)}
-          <td key={`${data.id}-link`} className="hidden lg:table-cell">
-            <Link
-              href={'/'}
-              className=" text-primaryColor hover:text-primaryHover transition-colors ease-in-out duration-150"
-            >
-              Detalhes
-            </Link>
-          </td>
-        </tr>
-      )),
+              <td
+                key={`${data.id}-${data.name}`}
+                className="table-cell text-center"
+              >
+                {data.name}
+              </td>
+              <td
+                key={`${data.id}-${data.points_cost}`}
+                className="table-cell text-center"
+              >
+                {data.points_cost}
+              </td>
+              {user?.type_user === 'C' && (
+                <td key={`${data.id}-link`} className="table-cell">
+                  <p
+                    onClick={() => hasNecessaryPoints && handleOpenGenerateVoucher(data)}
+                    className={`${hasNecessaryPoints ? "text-primaryColor cursor-pointer hover:text-primaryHover" : "text-gray2"} transition-colors ease-in-out duration-150`}
+                  >
+                    Voucher
+                  </p>
+                </td>
+              )}
+              <td key={`${data.id}-link`} className="hidden lg:table-cell">
+                <Link
+                  href={'/'}
+                  className=" text-primaryColor hover:text-primaryHover transition-colors ease-in-out duration-150"
+                >
+                  Detalhes
+                </Link>
+              </td>
+            </tr>
+          )}
+      ),
     [products],
   );
 

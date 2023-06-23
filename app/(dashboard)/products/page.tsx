@@ -3,7 +3,6 @@
 import React from 'react';
 import Table from '@/components/productsTable';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { api } from '@/api';
 import PointsCard from '@/ui/PointsCard';
 import { useAuthContext } from '@/context/AuthContext';
@@ -31,10 +30,6 @@ export default function Page() {
           <div className="flex max-h-[calc(100vh-170px)] w-full items-start justify-center overflow-auto overflow-x-auto rounded-lg bg-contentColor px-1 py-4 shadow-xl lg:max-h-[calc(100vh-200px)] lg:rounded-3xl lg:p-6">
             <Table products={products} />
           </div>
-          <Link
-            href="/financial-flow"
-            className="text-xs font-extralight text-primaryColor"
-          ></Link>
         </div>
       </div>
     </section>
