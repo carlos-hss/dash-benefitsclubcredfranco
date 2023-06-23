@@ -49,7 +49,7 @@ npm install | yarn.
 ```bash
 yarn dev
 ```
-6. Acesse o sistema de pontos CredmMarket em seu navegador:
+6. Acesse o sistema de pontos CredMarket em seu navegador:
 ```bash
 http://localhost:3000 | Rota adicionada no .env
 ```
